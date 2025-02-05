@@ -1,4 +1,4 @@
-import { View, Text, TextStyle } from 'react-native'
+import { Text } from 'react-native'
 import React from 'react'
 
 interface IProps {
@@ -17,8 +17,8 @@ interface IProps {
     m?: number,
     mr?: number,
     ml?: number,
-
-
+    fontSize?:number
+    FW?: string
 }
 
 const CText = ({
@@ -37,13 +37,15 @@ const CText = ({
     m,
     mr,
     ml,
+    fontSize,
+    FW,
 }: IProps) => {
 
     return (
         <Text 
             style={{
-                fontSize: h1 ? 24 : h2 ? 22 : h3 ? 18: h4? 16 : h5 ? 14 : h6 ? 12 : 14,
-                fontWeight: h1 ? '900' : h2 ? '700': h3? '600' : h4 ? '500' : h5 && 'normal',
+                fontSize: h1 ? 24 : h2 ? 22 : h3 ? 18: h4? 16 : h5 ? 14 : h6 ? 12 : fontSize ? fontSize : 14,
+                fontWeight: h1 ? '900' : h2 ? '700': h3? '600' : h4 ? '500' : FW ? FW : 'normal',
                 color: color,
                 textAlign: align,
                 marginTop: mt,

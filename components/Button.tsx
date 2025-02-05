@@ -30,7 +30,7 @@ interface IProps {
   FW?: string,
   titleColor?: string,
   justify?: string,
-  onPress: () => void,
+  onPress?: () => void,
 }
 
 const Button = ({

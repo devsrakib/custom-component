@@ -23,8 +23,10 @@ interface IDivProps {
     py?:number,
     pr?:number,
     pl?:number,
-flex?: string,
+FD?: string,
 items?: 'center' | 'flex-end' | 'flex-start',
+gap?: number,
+flex?: number
 }
 
 
@@ -51,8 +53,10 @@ const Div = (
         py,
         pr,
         pl,
-        flex, 
-        items
+         FD, 
+        items,
+        gap,
+        flex
     }: IDivProps
 ) => {
     return (
@@ -91,8 +95,10 @@ const Div = (
                     paddingLeft: pl,
                     paddingHorizontal: px,
                     paddingVertical: py,
-                    flexDirection: flex && 'row',
-                    alignItems: items
+                    flexDirection: FD,
+                    alignItems: items,
+                    gap: gap,
+                    flex: flex
                 }}>
                     {children}
                 </View>
