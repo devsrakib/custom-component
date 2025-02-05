@@ -14,7 +14,7 @@ const BackButton = () => {
       justifyContent: 'center',
     }}>
       {
-        <Icon name="rocket" size={30} color="#900" /> 
+        <Icon name="rocket" size={30} color="blue" />
       }
     </TouchableOpacity>
   )

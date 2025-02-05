@@ -8,6 +8,7 @@ import {
   FlatList,
   useColorScheme,
 } from 'react-native';
+import Div from './Div';
 
 const BUTTON_DATA = [
   { id: 0, data: 'button one' },
@@ -21,7 +22,6 @@ const BUTTON_DATA = [
 ];
 
 function DropDwon(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [selectedButton, setSelectedButton] = useState<number | null>(null);
   const [buttonLayout, setButtonLayout] = useState<{ x: number, y: number, width: number, height: number }>({ x: 0, y: 0, width: 0, height: 0 });
@@ -50,7 +50,7 @@ function DropDwon(): React.JSX.Element {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <Div>
 
       {/* Main button */}
       <TouchableOpacity
@@ -88,7 +88,7 @@ function DropDwon(): React.JSX.Element {
           />
         </View>
       )}
-    </SafeAreaView>
+    </Div>
   );
 }
 
