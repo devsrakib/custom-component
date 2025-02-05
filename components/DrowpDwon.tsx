@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import {
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -9,10 +8,6 @@ import {
   FlatList,
   useColorScheme,
 } from 'react-native';
-import Div from './components/Div';
-import CText from './components/CText';
-import Divider from './components/Divider';
-import Button from './components/Button';
 
 const BUTTON_DATA = [
   { id: 0, data: 'button one' },
@@ -25,7 +20,7 @@ const BUTTON_DATA = [
   { id: 7, data: 'button two' },
 ];
 
-function App(): React.JSX.Element {
+function DropDwon(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [selectedButton, setSelectedButton] = useState<number | null>(null);
@@ -56,7 +51,6 @@ function App(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
 
       {/* Main button */}
       <TouchableOpacity
@@ -94,34 +88,6 @@ function App(): React.JSX.Element {
           />
         </View>
       )}
-
-      <Div
-        width={300}
-        py={20}
-        rounded={20}
-        bg='red'
-        align='center'
-        mt={20}
-        px={50}
-        items='center'
-      >
-        <Text>hello</Text>
-        <Text>it's working ?</Text>
-        <Div
-        height={100}
-        align='center'
-        mt={20}
-        bg='green'
-        items='center'
-        >
-          
-          <Text>working</Text>
-        </Div>
-      </Div>
-
-      <CText>I'm custom text</CText>
-      <Divider mt={20}/>
-      <Button mt={20} />
     </SafeAreaView>
   );
 }
@@ -168,4 +134,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default DropDwon;
